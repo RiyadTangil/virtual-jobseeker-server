@@ -54,13 +54,39 @@ client.connect((err) => {
       });
     });
 
-
-  app.post("/addOrder", (req, res) => {
-    const orders = req.body;
-    ordersCollection.insertOne(orders).then((result) => {
-      res.send(result.insertedCount > 0);
+    app.post("/addEmployee", (req, res) => {
+      // const file = req.files.file;
+      console.log(req.body.FirstName);
+      // const name = req.body.name;
+      // const description = req.body.description;
+      // const price = req.body.price;
+      // const newImg = file.data;
+      // const encImg = newImg.toString("base64");
+  
+      // var image = {
+      //   contentType: file.mimetype,
+      //   size: file.size,
+      //   img: Buffer.from(encImg, "base64"),
+      // };
+      // console.log(name, description, image, price);
+      // serviceCollection
+      //   .insertOne({ name, description, image, price })
+      //   .then((result) => {
+      //     res.send(result.insertedCount > 0);
+      //   });
     });
-  });
+  
+  
+
+
+
+
+  // app.post("/addEmployee", (req, res) => {
+  //   const orders = req.body;
+  //   ordersCollection.insertOne(orders).then((result) => {
+  //     res.send(result.insertedCount > 0);
+  //   });
+  // });
 
   app.post("/addAdmin", (req, res) => {
     const admin = req.body;
@@ -89,27 +115,6 @@ client.connect((err) => {
 
 
 
-
-  app.post("/addService", (req, res) => {
-    const file = req.files.file;
-    const name = req.body.name;
-    const description = req.body.description;
-    const price = req.body.price;
-    const newImg = file.data;
-    const encImg = newImg.toString("base64");
-
-    var image = {
-      contentType: file.mimetype,
-      size: file.size,
-      img: Buffer.from(encImg, "base64"),
-    };
-    console.log(name, description, image, price);
-    serviceCollection
-      .insertOne({ name, description, image, price })
-      .then((result) => {
-        res.send(result.insertedCount > 0);
-      });
-  });
 
 
 
