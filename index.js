@@ -106,8 +106,8 @@ client.connect((err) => {
   });
 
   app.post("/addUser", (req, res) => {
-    const studentName = req.body.studentName
-    console.log(studentName);
+    const userPhoneNumber = req.body.phoneNumber
+    console.log(userPhoneNumber);
 
     usersCollection.find({ phoneNumber: userPhoneNumber })
       .toArray((err, documents) => {
@@ -128,10 +128,6 @@ client.connect((err) => {
 
   });
 
-
-
- 
- 
 
 });
 
